@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./ordenando.js"></script>
+</head>
+<body>
+
+    <form>
+        <fieldset>
+            <legend>Adicione os valores.</legend>
+            <label for="valor_digitado">Valor:</label>
+            <input type="number" id="valor_digitado"/>
+            <button type="button" id="Valor_digitado" onclick="add()">Adicionar</button>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Escolha o algorítimo.</legend>
+            <label for="Ação">Ação:</label>
+            <select id="algoritimo" name="tipo_algoritimo">
+                <option value="bubble_sort" id="bs">Bubble Sort</option>
+                <option value="selection_sort" id="ss">Selection Sort</option>
+                <option value="quick_sort" id="qs">Quick Sort</option>
+            </select>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Ordene ou misture.</legend>
+            <button type="button" onclick="ordenar()">Ordene</button>
+            <button type="button" onclick="misturar()">Misture</button>
+
+        </fieldset>
+          
+    </form>
+
+    <ul class="lists"></ul> 
+
+    <p id="vet"></p>
+    <p id="vet2"></p>
+
+    <script type="text/javascript">
+
+
+    function add(){
+
+        
+        valor = document.getElementById("valor_digitado").value;
+
+        var novaLinha = document.createElement("li");
+
+        var conteudo = document.createTextNode(valor);
+
+        novaLinha.appendChild(conteudo);
+
+        var ul = document.querySelector("ul");
+
+        ul.appendChild(novaLinha);
+        
+    }
+
+    function ordenar(){
+
+        valor = document.getElementById("valor_digitado").value;
+
+        bs = document.getElementById("bs").value;
+
+        ss = document.getElementById("ss").value;
+
+        qs = document.getElementById("qs").value;
+
+        let lists = document.querySelectorAll(".lists li");
+
+        let arrList = [...lists];
+
+        document.getElementById("vet").innerHTML = arrList;
+
+        document.getElementById("vet2").innerHTML = bubble_sort(arrList);
+
+
+    }
+    function misturar(){
+        
+    }
+</script>
+
+   
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./ordenando.js"></script>
+</head>
+<body>
+
+    <form>
+        <fieldset>
+            <legend>Adicione os valores.</legend>
+            <label for="valor_digitado">Valor:</label>
+            <input type="number" id="valor_digitado"/>
+            <button type="button" id="Valor_digitado" onclick="add()">Adicionar</button>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Escolha o algorítimo.</legend>
+            <label for="Ação">Ação:</label>
+            <select id="algoritimo" name="tipo_algoritimo">
+                <option value="bubble_sort">Bubble Sort</option>
+                <option value="selection_sort">Selection Sort</option>
+                <option value="quick_sort">Quick Sort</option>
+            </select>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Ordene ou misture.</legend>
+            <button type="button" onclick="ordenar()">Ordene</button>
+            <button type="button" onclick="misturar()">Misture</button>
+
+        </fieldset>
+          
+    </form>
+
+    <ul id="lista"></ul> 
+
+    <script type="text/javascript">
+
+
+    function add(){
+
+        
+        valor = document.getElementById("valor_digitado").value;
+
+        let list = document.getElementById("lista").innerHTML;
+
+        list += "<li>" + valor + "</li>"
+
+        document.getElementById("lista").innerHTML = list;
+        
+    }
+
+    function ordenar(){
+
+    }
+    function misturar(){
+        
+    }
+</script>
+
+   
+</body>
+</html>
